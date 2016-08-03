@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">
+                    Breadcrumb Demo
+                </a>
+            </div>
+        </div>
+    </nav>
+  <div class="view-container">
+      <div ng-controller="BreadcrumbsController">
+          <ol class="breadcrumb"
+              ng-show="route.current.breadcrumbs">
+              <li ng-class="{active: $last}" ng-repeat="breadcrumb in route.current.breadcrumbs">
+                  <a href="{{breadcrumb.href}}">
+                      {{breadcrumb.label}}
+                  </a>
+              </li>
+          </ol>
+      </div>
+    <div ng-view class="view-frame"></div>
+  </div>
+
+</body>
+</html>
